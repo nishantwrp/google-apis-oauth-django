@@ -1,2 +1,5 @@
 __pycache__
 .vscode
+build
+dist
+google_apis_oauth_django.egg-info

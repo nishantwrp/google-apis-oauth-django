@@ -11,6 +11,9 @@ setuptools.setup(
     description="TODO",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="GITHUB_URL",
+    url="https://github.com/nishantwrp/google-apis-oauth-django",
+    install_requires=[
+        'google-auth-httplib2', 'google-auth-oauthlib'
+    ],
     packages=setuptools.find_packages()
 )
