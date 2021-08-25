@@ -69,9 +69,9 @@ from googleapiclient.discovery import build
 # Use the stringified token to get a credentials object
 # that can be used to authenticate requests made by
 # google-api-python-client
-# NOTE: This function automatically refreshes the access_token
-# if required.
-creds = google_apis_oauth.load_credentials(stringified_token)
+# refreshed is a boolean that tells if the token was expired and was renewed.
+# You may want to update the credentials in the database if it is True.
+creds, refreshed = google_apis_oauth.load_credentials(stringified_token)
 
 # Using credentials in google-api-python-client.
 service = build('calendar', 'v3', credentials=creds)

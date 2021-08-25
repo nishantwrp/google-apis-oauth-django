@@ -119,7 +119,9 @@ def load_credentials(stringified_credentials):
     credentials.expiry = expiry
 
     request = google.auth.transport.requests.Request()
+    refreshed = False
     if credentials.expired:
         credentials.refresh(request)
+        refreshed = True
 
-    return credentials
+    return credentials, refreshed
